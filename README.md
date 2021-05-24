@@ -1,2 +1,2 @@
-# RAdBot
-test 1
+# PongDBot
+Simple Ping Pong Discord Bot
