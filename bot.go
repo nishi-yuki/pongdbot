@@ -62,8 +62,9 @@ func (bot *Bot) handler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	msgl := strings.Fields(m.Content)
-	taskName := strings.TrimPrefix(msgl[0], bot.Prefix)
+	c := strings.TrimPrefix(m.Content, bot.Prefix)
+	msgl := strings.Fields(c)
+	taskName := msgl[0]
 
 	fmt.Print("Run \"" + taskName + "\" ")
 	res, err := bot.TaskRunner.Run(taskName, m, msgl[1:])
